@@ -18,7 +18,9 @@ Installing Docker Desktop will provide the GUI application for Docker, as well a
     $ docker build . -t <image-name>
 ```
 
-NOTE: - _<image-name>_ can be whatever name you want to reference the image by
+NOTE:
+
+- `<image-name>` can be whatever name you want to reference the image by
 
 2. Verify that Docker recognizes the built image
 
