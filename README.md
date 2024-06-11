@@ -15,7 +15,7 @@ Installing Docker Desktop will provide the GUI application for Docker, as well a
 1. Navigate to the directory containing the _Dockerfile_ (this should be the root directory of the repo). Execute the following command to build the image
 
 ```shell
-    $ docker build . -t <image-name>
+    docker build . -t <image-name>
 ```
 
 NOTE:
@@ -25,7 +25,7 @@ NOTE:
 2. Verify that Docker recognizes the built image
 
 ```shell
-    $ docker images
+    docker images
 ```
 
 You should see a list with info about the Docker image.
@@ -35,7 +35,7 @@ You should see a list with info about the Docker image.
 1. Run the container with a mounted volume. This mounted volume is the **src** directory within this repo.
 
 ```shell
-   $ docker run -it -p 5000:8888 -v ./src:/home/jovyan/work <image-name>
+   docker run -it -p 5000:8888 -v ./src:/home/jovyan/work <image-name>
 ```
 
 NOTE:
