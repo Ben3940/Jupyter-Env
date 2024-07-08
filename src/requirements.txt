@@ -1,4 +1,4 @@
 numpy
 pandas
 matplotlib
-kafka-python
+confluent_kafka
