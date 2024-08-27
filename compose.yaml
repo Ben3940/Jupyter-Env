@@ -3,7 +3,7 @@ services:
   zookeeper:
     image: confluentinc/cp-zookeeper:7.4.4
     depends_on:
-      - jupyter
+      - python
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
@@ -13,16 +13,19 @@ services:
     networks:
       - kafka-net
 
-  jupyter:
+  python:
     build: .
     ports:
       - 5000:8888
-    environment:
-      - JUPYTER_TOKEN=password
+    # environment:
+    #   - JUPYTER_TOKEN=password
+    # volumes:
+    #   - type: bind
+    #     source: ./src
+    #     target: /home
     volumes:
-      - type: bind
-        source: ./src
-        target: /home/jovyan/work
+      - ./src:/usr/src/app
+    command: /bin/bash -c "python /usr/src/app/main.py"
     networks:
       - kafka-net
 
