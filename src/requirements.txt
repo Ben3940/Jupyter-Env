@@ -2,4 +2,4 @@ numpy
 pandas
 matplotlib
 confluent_kafka
-sklearn
+scikit-learn
