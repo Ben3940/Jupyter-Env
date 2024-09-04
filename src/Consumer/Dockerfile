@@ -5,4 +5,4 @@ FROM python:latest
 WORKDIR /usr/src/app
 COPY . .
 RUN python -m pip install --no-cache -r ./requirements.txt
-CMD ["python3", "main.py"]
+CMD ["python3", "Consumer.py"]

@@ -13,8 +13,8 @@ services:
     networks:
       - kafka-net
 
-  python:
-    build: .
+  python-producer:
+    build: ./Producer
     ports:
       - 5000:8888
     # environment:
@@ -24,7 +24,23 @@ services:
     #     source: ./src
     #     target: /home
     volumes:
-      - ./src:/usr/src/app
+      - ./Producer:/usr/src/app
+    command: /bin/bash -c "python /usr/src/app/main.py"
+    networks:
+      - kafka-net
+
+  python-consumer:
+    build: ./Consumer
+    ports:
+      - 5000:8888
+    # environment:
+    #   - JUPYTER_TOKEN=password
+    # volumes:
+    #   - type: bind
+    #     source: ./src
+    #     target: /home
+    volumes:
+      - ./Consumer:/usr/src/app
     command: /bin/bash -c "python /usr/src/app/main.py"
     networks:
       - kafka-net

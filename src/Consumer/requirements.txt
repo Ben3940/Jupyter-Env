@@ -1,0 +1,5 @@
+numpy
+pandas
+matplotlib
+confluent_kafka
+scikit-learn
